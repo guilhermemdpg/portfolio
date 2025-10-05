@@ -24,7 +24,8 @@ export const portfolioConfig = {
     title: "About Me",
     paragraphs: [
       "I'm a passionate full-stack developer with 3+ years of experience building web applications that users love. I believe in writing clean, maintainable code and creating seamless user experiences.",
-      "When I'm not coding, you can find me contributing to open-source projects, or exploring new technologies. I'm always eager to learn and take on new challenges."
+      "When I'm not coding, you can find me contributing to open-source projects, or exploring new technologies. I'm always eager to learn and take on new challenges.",
+      "I also stand out for contributing to process improvements and critical issue resolution that were negatively affecting teams and products I worked on. My efforts helped improve KPI metrics by up to 40% and fix critical bugs impacting key products used by over 100 clients and more than 2,000 simultaneous users"
     ],
     image: "/Guilherme.png" // Replace with your image path
   },
