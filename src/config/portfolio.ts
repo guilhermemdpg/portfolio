@@ -100,7 +100,7 @@ export const portfolioConfig = {
       },
       {
         title: "Eduxeclass",
-        description: "project I’m currently involved in at my job, where I am one of the main people responsible for product maintenance and new feature development, working alongside a colleague. Although I was not part of the original creation, I took on the challenge of reviving and sustaining the product. With resilience and a proactive approach, I managed to overcome the lack of documentation and quickly adapted to a completely new tech stack at the time, ensuring the product’s growth and continuity.",
+        description: "A project I was involved in at my previous job, where I was one of the main people responsible for product maintenance and new feature development, working alongside a colleague. Although I was not part of the original creation, I took on the challenge of reviving and sustaining the product. With resilience and a proactive approach, I managed to overcome the lack of documentation and quickly adapted to a completely new tech stack at the time, ensuring the product’s growth and continuity.",
         image: "/placeholder.svg",
         tags: ["Laravel", "MySQL", "PHP", "Vue.js"],
         figma: "#",
@@ -115,6 +115,55 @@ export const portfolioConfig = {
         figma: "#",
         liveUrl: "#",
         githubUrl: "https://github.com/vaga-justa"
+      }
+    ]
+  },
+
+  // Courses Section
+  courses: {
+    title: "Courses and Certifications",
+    items: [
+      {
+        title: "Oracle Certified Associate",
+        description: "An Oracle Certified Associate has a technical background and a strong understanding of Oracle technologies. An Associate certification is intended for candidates who can use their knowledge and experience to apply Oracle’s recommended best practices in the respective domain. Prepares you for these roles: - Administrator - Implementer - Developer - Architect - Data scientist/business analyst. Recognizes these skills: - Foundational and intermediate knowledge and skills",
+        image: "/oracle.png",
+        tags: ["OCI", "Oracle Cloud Infrastructure", "Status: Completed"],
+        cert: "/eCertificate.pdf"
+      },
+      {
+        title: "SQLite Database",
+        description: "Course completed on the Origamid platform, focused on SQLite, where I learned data types, pragma, CRUD operations, SQLite environment setup, limitations, use cases, functions, views, triggers, and a CRM project as the course’s final assignment. In this project, I was able to get hands-on experience and build an SQLite database that will later be used in the upcoming Node.js course on the same platform.",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg",
+        tags: ["CRUD ops", "Pragma", "Strict", "SQLite CLI", "JSON", "Views, Triggers", "Data Types", "Status: Completed"],
+        cert: "https://www.origamid.com/certificate/1a913b0f"
+      },
+      { 
+        title: "Kubernetes Essentials",
+        description: "In this course, I learned more about the Kubernetes engine, how it runs on top of Docker through Minikube for local learning, and I also learned concepts such as the control plane, pods, YAML manifests, resource limitations, crash loopback and how to fix it, deploying web images and operating system images like Ubuntu, and web servers such as Nginx. In addition, I also learned more about the history of how the Kubernetes project emerged and the companies behind its maintenance and development.",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
+        tags: ["Kubernetes", "Pods", "Yaml", "Shell", "Control Plane", "Status: Completed"],
+        cert: "/certificate-kubernetes-essentials.pdf"
+      },
+      {
+        title: "Complete Javascript ES6",
+        description: "In this course, you will learn everything necessary to master JavaScript. The course goes from basic to advanced, and by the end of it you will have a full understanding of the language, its main methods, and its syntax. The focus is on learning the language, but its primary area of application will be on the web, through DOM manipulation and requests using the Fetch API. This is not a course for those looking for something quick, but for those who want to truly master the language. The code taught uses all the latest features of modern JavaScript versions, such as arrow functions, promises, and more.",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        tags: ["Javascript ES6", "Promisses", "Data Types", "Arrow Functions", "DOM Manipulation", "Status: in progress"],
+        cert: "#"
+      },
+      {
+        title: "Complete React",
+        description: "In this course, you will learn how to use React from scratch for building reactive web applications. You will learn how to create a web application with features similar to social networks like Instagram. The focus of the course is on gaining a complete understanding of React, so almost everything will be built from scratch, without relying on external packages.",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        tags: ["React", "Components", "Hooks", "Components Lifecycle", "Promisses", "Status: in progress"],
+        cert: "#"
+      },
+       {
+        title: "CSS Flexbox, CSS Grid Layout, UI Advanced Design",
+        description: "A set of CSS courses where I was able to learn, at a more low-level approach, how to manually handle different behaviors of web styling. I also learned, in the Advanced UI Design course, more robust Figma features, building on what I had already learned in the Web Design course from the same platform.",
+        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+        tags: ["CSS Flex Layout", "Flexbox Properties", "Grid Conventions and Properties", "Intermediary Figma", "Complete web design from scratch", "Status: Completed"],
+        cert: "https://www.origamid.com/certificate/47eb71a7",
       }
     ]
   },
