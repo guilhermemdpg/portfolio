@@ -173,6 +173,8 @@ export const portfolioConfig = {
     title: "Get In Touch",
     description: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
     email: "guimarsondpgarcia@gmail.com",
+    resumePT: "/curriculo-guilherme-garcia-desenvolvedor-de-software.pdf",
+    resumeEN: "/guilherme-garcia-software-developer.pdf",
     social: {
       github: "https://github.com/guilhermemdpg",
       linkedin: "https://linkedin.com/in/guilherme-marson-b18b241b5",

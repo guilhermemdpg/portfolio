@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Gitlab } from "lucide-react";
+import { Mail, Github, Linkedin, Gitlab, FileDown, ExternalLink } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
 
 export const Contact = () => {
@@ -27,6 +27,20 @@ export const Contact = () => {
                 <Mail className="mr-2" />
                 {portfolioConfig.contact.email}
               </a>
+            </Button>
+
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto mt-2 sm:mt-0 sm:ml-2">
+              <a href={portfolioConfig.contact.resumePT} target="_blank" rel="noopener noreferrer">
+                <FileDown className="mr-2" />
+                My resume (PT-BR)
+              </a>  
+            </Button>
+
+            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+              <a href={portfolioConfig.contact.resumeEN} target="_blank" rel="noopener noreferrer">
+                <FileDown className="mr-2" />
+                My resume (EN)
+              </a>  
             </Button>
             
             <div className="flex justify-center gap-4 pt-4">
