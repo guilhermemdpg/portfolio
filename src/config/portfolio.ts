@@ -6,13 +6,13 @@
 export const portfolioConfig = {
   // Personal Information
   name: "Guilherme Marson D' Paulo Garcia",
-  title: "Full Stack Developer",
-  tagline: "Passionate about crafting intelligent solutions to tackle challenges of all sizes through technology.",
+  title: "Software Engineer",
+  tagline: "Building reliable web systems across Full Stack Development, Infrastructure, and DevOps.",
   
   // Hero Section
   hero: {
     greeting: "Hi, I'm",
-    description: "I craft elegant solutions to complex problems. Specialized in building modern web applications with Laravel, PHP, Vue.js, Javascript, C#, AWS.",
+    description: "I build and modernize reliable web systems with C#/.NET, Vue.js, Python, SQL, Linux, Docker, and AWS, combining Full Stack Development with Infrastructure and DevOps.",
     ctaText: "View My Solutions",
     ctaLink: "#projects",
     secondaryCtaText: "Get in Touch",
@@ -23,9 +23,9 @@ export const portfolioConfig = {
   about: {
     title: "About Me",
     paragraphs: [
-      "I'm a passionate full-stack developer with 3+ years of experience building web applications that users love. I believe in writing clean, maintainable code and creating seamless user experiences.",
-      "When I'm not coding, you can find me contributing to open-source projects, or exploring new technologies. I'm always eager to learn and take on new challenges.",
-      "I also stand out for contributing to process improvements and critical issue resolution that were negatively affecting teams and products I worked on. My efforts helped improve KPI metrics by up to 40% and fix critical bugs impacting key products used by over 100 clients and more than 2,000 simultaneous users"
+      "I'm a software engineer with experience across Full Stack Development, Infrastructure, and DevOps. I focus on modernizing web systems, building reusable solutions, and improving the reliability of production environments.",
+      "Currently at TOTVS juriTIs, I contribute to the evolution of LegalDesk, working Full Stack with C#/.NET and Vue.js while helping migrate legacy front-end screens and components from Durandal to Vue.js.",
+      "In previous roles, I implemented automation and observability improvements that reduced critical incidents by approximately 40%, shortened incident detection from hours to minutes, and supported critical products used by approximately 200 clients."
     ],
     image: "/Guilherme.png" // Replace with your image path
   },
@@ -36,11 +36,11 @@ export const portfolioConfig = {
     categories: [
       {
         name: "Frontend",
-        items: ["React", "Bootstrap", "CSS", "HTML", "Javascript", "Livewire", "Vue.js"]
+        items: ["React", "Bootstrap", "CSS", "HTML", "JavaScript", "Livewire", "Vue.js", "Durandal"]
       },
       {
         name: "Backend",
-        items: ["C#", "Python", "PHP", "Dart", "Laravel", "REST APIs", "Webhooks", "MVC Architecture", "Pandas", "Selenium", "Microservices"]
+        items: ["C#/.NET", "Python", "PHP", "Dart", "Laravel", "REST APIs", "Webhooks", "MVC Architecture", "Pandas", "Selenium", "Microservices"]
       },
       {
         name: "Mobile",
@@ -52,16 +52,15 @@ export const portfolioConfig = {
       },
       {
         name: "DevOps",
-        items: ["Kubernetes", "Docker", "AWS Cloudwatch", "AWS EC2", "AWS S3", "AWS RDS/Aurora", "Oracle Cloud OCI", "Grafana", "Bash", "Shell Scripting", "Python Scripting",
-                "Docker CLI", "Kubectl", "Crontabs", "Getting errors by analyzing logs", "yaml manifests to create and maintain kubernetes pods and deployment"]
+        items: ["Kubernetes", "Docker", "AWS CloudWatch", "AWS EC2", "AWS S3", "AWS RDS/Aurora", "Azure", "Oracle Cloud OCI", "Grafana", "Zabbix", "Datadog", "Proxmox", "pfSense", "Nginx", "Bash", "Shell Scripting", "Python Scripting", "Docker CLI", "kubectl", "Cron", "Log Analysis", "Kubernetes Manifests"]
       },
       {
         name: "Softskills",
-        items: ["Proactivity", "Teamwork", "Knowledge Sharing", "Resilience", "Adaptability", "Self-Learning / Self-Taught", "Fast and Continuous Learning", "Empathy"]
+        items: ["Proactivity", "Teamwork", "Knowledge Sharing", "Problem Solving", "Resilience", "Adaptability", "Self-Learning / Self-Taught", "Fast and Continuous Learning", "Empathy"]
       },
       {
         name: "Tools & Others",
-        items: ["Git", "Bitbucket", "Github", "Gitlab", "Linux", "Windows", "Agile", "Jira", "Notion", "Supabase", "Figma", "Netlify"]
+        items: ["Git", "Bitbucket", "GitHub", "GitLab", "Linux", "Windows", "Agile", "Jira", "ServiceNow", "Notion", "Supabase", "Figma", "Netlify"]
       }
     ]
   },
@@ -148,7 +147,7 @@ export const portfolioConfig = {
         title: "Complete Javascript ES6",
         description: "In this course, you will learn everything necessary to master JavaScript. The course goes from basic to advanced, and by the end of it you will have a full understanding of the language, its main methods, and its syntax. The focus is on learning the language, but its primary area of application will be on the web, through DOM manipulation and requests using the Fetch API. This is not a course for those looking for something quick, but for those who want to truly master the language. The code taught uses all the latest features of modern JavaScript versions, such as arrow functions, promises, and more.",
         image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-        tags: ["Javascript ES6", "Promisses", "Data Types", "Arrow Functions", "DOM Manipulation", "Status: in progress"],
+        tags: ["JavaScript ES6", "Promises", "Data Types", "Arrow Functions", "DOM Manipulation", "Status: Completed"],
         cert: "#"
       },
       {
@@ -177,7 +176,7 @@ export const portfolioConfig = {
     resumeEN: "/guilherme-garcia-software-developer.pdf",
     social: {
       github: "https://github.com/guilhermemdpg",
-      linkedin: "https://linkedin.com/in/guilherme-marson-b18b241b5",
+      linkedin: "https://linkedin.com/in/guilherme-marson-d-paulo-garcia-b18b241b5",
       gitlab: "https://gitlab.com/gmdpg98"
     }
   }
