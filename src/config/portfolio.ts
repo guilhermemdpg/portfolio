@@ -6,7 +6,8 @@ export const portfolioConfig = {
   initials: "GG",
   email: "guimarsondpgarcia@gmail.com",
   location: "São Paulo, Brasil",
-  portrait: "/Guilherme.png",
+  portrait: "/Guilherme-duotone-final.png",
+  portraitOriginal: "/Guilherme.png",
   resumePT: "/curriculo-guilherme-garcia-desenvolvedor-de-software.pdf",
   resumeEN: "/guilherme-garcia-software-developer.pdf",
   social: {

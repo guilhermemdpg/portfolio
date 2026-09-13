@@ -12,7 +12,17 @@ export const About = () => {
         <Reveal className="portrait-column">
           <div className="portrait-frame">
             <div className="portrait-grid" aria-hidden="true" />
-            <img src={portfolioConfig.portrait} alt={portfolioConfig.name} />
+            <img
+              className="portrait-original"
+              src={portfolioConfig.portraitOriginal}
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              className="portrait-stylized"
+              src={portfolioConfig.portrait}
+              alt={portfolioConfig.name}
+            />
             <span className="portrait-index">02 / ABOUT</span>
           </div>
           <div className="portrait-caption">
