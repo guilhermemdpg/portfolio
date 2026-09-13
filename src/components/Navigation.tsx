@@ -1,79 +1,88 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Courses", href: "#courses" },
-  { name: "Contact", href: "#contact" }
-];
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { content, language, toggleLanguage } = useLanguage();
+  const navItems = [
+    { label: content.navigation.work, href: "#work" },
+    { label: content.navigation.about, href: "#about" },
+    { label: content.navigation.experience, href: "#experience" },
+    { label: content.navigation.stack, href: "#skills" },
+    { label: content.navigation.learning, href: "#learning" },
+  ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("keydown", handleEscape);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b" : ""
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Portfolio
-          </a>
+    <header className={`navigation ${isScrolled ? "is-scrolled" : ""}`}>
+      <div className="nav-inner page-width">
+        <a href="#top" className="brand" aria-label={`${portfolioConfig.shortName} — ${language === "pt" ? "início" : "home"}`}>
+          <span className="brand-mark">{portfolioConfig.initials}</span>
+          <span className="brand-name">{portfolioConfig.shortName}</span>
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+        <nav className="desktop-nav" aria-label={language === "pt" ? "Navegação principal" : "Main navigation"}>
+          {navItems.map((item) => (
+            <a href={item.href} key={item.href}>{item.label}</a>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        <div className="nav-actions">
+          <button
+            type="button"
+            className="language-switch"
+            onClick={toggleLanguage}
+            aria-label={content.navigation.language}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </Button>
+            <span className={language === "pt" ? "active" : ""}>PT</span>
+            <i />
+            <span className={language === "en" ? "active" : ""}>EN</span>
+          </button>
+          <a href="#contact" className="nav-contact">
+            {content.navigation.contact}<ArrowUpRight size={15} />
+          </a>
+          <button
+            type="button"
+            className="menu-button"
+            onClick={() => setIsOpen((current) => !current)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isOpen ? content.navigation.close : content.navigation.menu}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        )}
       </div>
-    </nav>
+
+      <nav id="mobile-navigation" className={`mobile-nav ${isOpen ? "is-open" : ""}`} aria-label={language === "pt" ? "Navegação móvel" : "Mobile navigation"}>
+        <div className="page-width">
+          {navItems.map((item, index) => (
+            <a href={item.href} key={item.href} onClick={() => setIsOpen(false)}>
+              <span>0{index + 1}</span>{item.label}
+            </a>
+          ))}
+          <a href="#contact" onClick={() => setIsOpen(false)}>
+            <span>06</span>{content.navigation.contact}
+          </a>
+        </div>
+      </nav>
+    </header>
   );
 };

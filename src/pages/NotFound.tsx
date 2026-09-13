@@ -1,23 +1,16 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
+  const { language } = useLanguage();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
-        </a>
-      </div>
-    </div>
+    <main className="not-found">
+      <span>404 / LOST SIGNAL</span>
+      <h1>{language === "pt" ? "Essa rota não existe." : "This route does not exist."}</h1>
+      <p>{language === "pt" ? "O sistema está operacional — o endereço é que tomou outro caminho." : "The system is operational — the address simply took another path."}</p>
+      <a className="button button-primary" href="/"><ArrowLeft size={18} />{language === "pt" ? "Voltar ao início" : "Back home"}</a>
+    </main>
   );
 };
 

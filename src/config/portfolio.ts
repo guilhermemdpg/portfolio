@@ -1,183 +1,436 @@
-// ============================================
-// PORTFOLIO CONFIGURATION
-// ============================================
-// Edit this file to customize your portfolio content
+export type Language = "pt" | "en";
 
 export const portfolioConfig = {
-  // Personal Information
   name: "Guilherme Marson D' Paulo Garcia",
-  title: "Software Engineer",
-  tagline: "Building reliable web systems across Full Stack Development, Infrastructure, and DevOps.",
-  
-  // Hero Section
-  hero: {
-    greeting: "Hi, I'm",
-    description: "I build and modernize reliable web systems with C#/.NET, Vue.js, Python, SQL, Linux, Docker, and AWS, combining Full Stack Development with Infrastructure and DevOps.",
-    ctaText: "View My Solutions",
-    ctaLink: "#projects",
-    secondaryCtaText: "Get in Touch",
-    secondaryCtaLink: "#contact"
+  shortName: "Guilherme Garcia",
+  initials: "GG",
+  email: "guimarsondpgarcia@gmail.com",
+  location: "São Paulo, Brasil",
+  portrait: "/Guilherme.png",
+  resumePT: "/curriculo-guilherme-garcia-desenvolvedor-de-software.pdf",
+  resumeEN: "/guilherme-garcia-software-developer.pdf",
+  social: {
+    github: "https://github.com/guilhermemdpg",
+    linkedin: "https://linkedin.com/in/guilherme-marson-d-paulo-garcia-b18b241b5",
+    gitlab: "https://gitlab.com/gmdpg98",
   },
-  
-  // About Section
-  about: {
-    title: "About Me",
-    paragraphs: [
-      "I'm a software engineer with experience across Full Stack Development, Infrastructure, and DevOps. I focus on modernizing web systems, building reusable solutions, and improving the reliability of production environments.",
-      "Currently at TOTVS juriTIs, I contribute to the evolution of LegalDesk, working Full Stack with C#/.NET and Vue.js while helping migrate legacy front-end screens and components from Durandal to Vue.js.",
-      "In previous roles, I implemented automation and observability improvements that reduced critical incidents by approximately 40%, shortened incident detection from hours to minutes, and supported critical products used by approximately 200 clients."
-    ],
-    image: "/Guilherme.png" // Replace with your image path
+  locales: {
+    pt: {
+      meta: {
+        title: "Guilherme Garcia — Engenheiro de Software",
+        description:
+          "Engenheiro de Software especializado em produtos web, modernização de sistemas, observabilidade e confiabilidade operacional.",
+      },
+      navigation: {
+        work: "Trabalho",
+        about: "Sobre",
+        experience: "Experiência",
+        stack: "Stack",
+        learning: "Formação",
+        contact: "Contato",
+        menu: "Abrir menu",
+        close: "Fechar menu",
+        language: "Mudar para inglês",
+      },
+      hero: {
+        eyebrow: "Engenheiro de Software • Full Stack & Reliability",
+        titleLead: "Construo produtos",
+        titleAccent: "que não podem parar.",
+        description:
+          "Transformo sistemas complexos em experiências mais claras, sustentáveis e confiáveis — do componente no front-end à observabilidade em produção.",
+        primaryCta: "Explorar meu trabalho",
+        secondaryCta: "Baixar currículo",
+        status: "Aberto a boas conversas",
+        locationLabel: "Baseado em São Paulo",
+        sceneLabel: "Sistema em evolução",
+        sceneStatus: "todos os serviços operacionais",
+        sceneNodes: ["BUILD", "OBSERVE", "EVOLVE"],
+      },
+      signals: [
+        { value: "3 frentes", label: "Produto, infraestrutura e DevOps" },
+        { value: "24×7", label: "Experiência em operação crítica" },
+        { value: "≈200", label: "Clientes em ambientes sustentados" },
+        { value: "15+", label: "Sites entregues como freelancer" },
+      ],
+      about: {
+        eyebrow: "Minha forma de trabalhar",
+        title: "Código é só uma parte da entrega.",
+        intro:
+          "Sou bacharel em Ciência da Computação e atuo entre desenvolvimento Full Stack, infraestrutura e DevOps. Essa visão de ponta a ponta me ajuda a construir interfaces pensando na regra de negócio — e sistemas pensando em quem depende deles todos os dias.",
+        paragraphs: [
+          "Hoje, na TOTVS juriTIs, participo da evolução do LegalDesk, um ERP web completo para a gestão de escritórios de advocacia. Trabalho na nova geração do produto, criando componentes e estruturas reutilizáveis em Vue.js e conectando essa experiência a uma base robusta em C#/.NET.",
+          "Antes disso, atuei em ambientes de alta criticidade da Hapvida/TIVIT, onde observabilidade não era um dashboard decorativo: era o caminho para antecipar falhas, investigar padrões e proteger fluxos essenciais da operação.",
+        ],
+        principle: "Entender o sistema inteiro para melhorar a parte certa.",
+      },
+      work: {
+        eyebrow: "Trabalho em destaque",
+        title: "Problemas reais. Contextos complexos. Impacto que permanece.",
+        description:
+          "Uma seleção de produtos e desafios profissionais que representam melhor o tipo de engenharia que entrego hoje.",
+        confidential: "Case profissional • detalhes públicos limitados",
+        items: [
+          {
+            number: "01",
+            company: "TOTVS juriTIs",
+            title: "LegalDesk — a nova geração de um ERP jurídico",
+            category: "Modernização de produto",
+            period: "2026 — presente",
+            summary:
+              "Construção do zero de componentes e estruturas genéricas que dão forma à nova experiência do LegalDesk, um ERP completo para gestão jurídica.",
+            challenge:
+              "Evoluir uma aplicação consolidada sem perder regras de negócio, comportamentos e confiança conquistados no produto legado.",
+            contribution: [
+              "Componentes reutilizáveis em Vue.js para reduzir duplicação e padronizar novas telas.",
+              "Migração gradual de fluxos em Durandal, preservando o comportamento já validado pelo negócio.",
+              "Atuação Full Stack em C#/.NET, APIs, grids e regras de negócio em parceria com UX e produto.",
+            ],
+            tags: ["Vue.js", "C# / .NET", "Durandal", "Design System", "ERP"],
+            tone: "cyan",
+          },
+          {
+            number: "02",
+            company: "Hapvida • TIVIT",
+            title: "Observabilidade aplicada a uma operação crítica",
+            category: "Reliability case",
+            period: "2026",
+            summary:
+              "Investigação proativa de falhas recorrentes na exportação de exames, um fluxo sensível e diretamente ligado à continuidade operacional.",
+            challenge:
+              "Transformar sinais dispersos em uma hipótese técnica clara antes que a recorrência se convertesse em impacto ainda maior.",
+            contribution: [
+              "Correlação de métricas e eventos no Zabbix para isolar padrões de falha.",
+              "Identificação de locks em tabelas do banco de dados como causa associada ao processo.",
+              "Direcionamento técnico para mitigação, somado à atuação 24×7 com Grafana e Datadog.",
+            ],
+            tags: ["Zabbix", "Grafana", "Datadog", "SQL", "Incident Response"],
+            tone: "lime",
+          },
+          {
+            number: "03",
+            company: "Eduxe",
+            title: "De operação reativa a ambientes mais previsíveis",
+            category: "Infraestrutura & DevOps",
+            period: "2022 — 2025",
+            summary:
+              "Reestruturação, automação e observabilidade de ambientes críticos usados por aproximadamente 200 clientes.",
+            challenge:
+              "Estabilizar produtos com pouca documentação e criar condições para o time detectar, resolver e prevenir problemas com mais velocidade.",
+            contribution: [
+              "Redução aproximada de 40% nos incidentes críticos em produção.",
+              "Tempo de detecção reduzido de horas para minutos com CloudWatch e Grafana.",
+              "Automações que reduziram em 40–50% o tempo de rotinas internas.",
+            ],
+            tags: ["AWS", "Docker", "Linux", "Python", "Grafana"],
+            tone: "violet",
+          },
+          {
+            number: "04",
+            company: "Open source",
+            title: "Vaga Justa — tecnologia também é posicionamento",
+            category: "Comunidade",
+            period: "Contribuição aberta",
+            summary:
+              "Uma iniciativa coletiva para tornar processos seletivos mais transparentes, respeitosos e equilibrados para empresas e profissionais.",
+            challenge:
+              "Transformar uma insatisfação comum do mercado em princípios públicos que qualquer pessoa possa consultar e melhorar.",
+            contribution: [
+              "Colaboração com uma comunidade multidisciplinar.",
+              "Construção aberta de um manifesto para empresas e desenvolvedores.",
+              "Documentação versionada e participação pública via GitHub.",
+            ],
+            tags: ["Open Source", "GitHub", "Markdown", "Comunidade"],
+            tone: "orange",
+            link: "https://github.com/vaga-justa",
+            linkLabel: "Conhecer a iniciativa",
+          },
+        ],
+      },
+      experience: {
+        eyebrow: "Trajetória",
+        title: "Cada etapa ampliou o meu campo de visão.",
+        description:
+          "Do design à operação crítica, fui somando camadas até conseguir enxergar produto e infraestrutura como um único sistema.",
+        present: "Agora",
+        items: [
+          {
+            company: "TOTVS juriTIs",
+            role: "Desenvolvedor Pleno",
+            period: "abr 2026 — atual",
+            description:
+              "Evolução e modernização do LegalDesk com C#/.NET e Vue.js, criando a base reutilizável para a nova experiência do produto.",
+          },
+          {
+            company: "Hapvida • TIVIT",
+            role: "Analista de Infraestrutura",
+            period: "fev 2026 — abr 2026",
+            description:
+              "Monitoramento, troubleshooting e resposta a incidentes em uma operação 24×7 de alta criticidade.",
+          },
+          {
+            company: "Eduxe",
+            role: "DevOps, Infraestrutura & Desenvolvimento",
+            period: "set 2022 — dez 2025",
+            description:
+              "Progressão de Operações para Desenvolvimento e DevOps, com foco em automação, observabilidade e sustentação de produtos.",
+          },
+          {
+            company: "Projetos independentes",
+            role: "Web Designer & Developer",
+            period: "fev 2020 — set 2022",
+            description:
+              "Mais de 15 websites entregues do conceito ao deploy, com satisfação de clientes superior a 95%.",
+          },
+        ],
+      },
+      skills: {
+        eyebrow: "Capacidades",
+        title: "Uma stack orientada ao problema, não à tendência.",
+        description:
+          "Ferramentas que uso para construir, operar e evoluir sistemas com responsabilidade de ponta a ponta.",
+        groups: [
+          {
+            number: "01",
+            title: "Construir",
+            description: "Produtos web e interfaces reutilizáveis conectados a regras de negócio reais.",
+            items: ["C# / .NET", "Vue.js", "JavaScript", "React", "Laravel", "REST APIs"],
+          },
+          {
+            number: "02",
+            title: "Operar",
+            description: "Ambientes confiáveis, processos repetíveis e deploys com menor risco.",
+            items: ["Linux", "Docker", "Kubernetes", "AWS", "Azure", "Nginx"],
+          },
+          {
+            number: "03",
+            title: "Observar",
+            description: "Sinais que ajudam o time a agir antes, diagnosticar melhor e aprender com falhas.",
+            items: ["Grafana", "Zabbix", "Datadog", "CloudWatch", "Logs", "Incident Response"],
+          },
+          {
+            number: "04",
+            title: "Automatizar",
+            description: "Rotinas e dados transformados em fluxos claros, rápidos e auditáveis.",
+            items: ["Python", "Shell Script", "SQL", "PostgreSQL", "MySQL", "Webhooks"],
+          },
+        ],
+      },
+      learning: {
+        eyebrow: "Formação & evolução",
+        title: "Aprendizado contínuo, aplicado no mundo real.",
+        degree: {
+          title: "Bacharelado em Ciência da Computação",
+          institution: "Universidade Anhanguera",
+          period: "2020 — 2023",
+        },
+        certificatesLabel: "Certificações e cursos selecionados",
+        viewCertificate: "Ver certificado",
+        items: [
+          { title: "Oracle Cloud Infrastructure Foundations Associate", issuer: "Oracle Academy", year: "2025", status: "Concluído", url: "/eCertificate.pdf" },
+          { title: "Kubernetes Essentials", issuer: "LINUXTips", year: "2025", status: "Concluído", url: "/certificate-kubernetes-essentials.pdf" },
+          { title: "SQLite", issuer: "Origamid", year: "2025", status: "Concluído", url: "https://www.origamid.com/certificate/1a913b0f" },
+          { title: "Vue.js 2 Completo", issuer: "Origamid", year: "2025", status: "Concluído" },
+          { title: "MongoDB", issuer: "Udemy", year: "2024", status: "Concluído" },
+          { title: "JavaScript ES6+", issuer: "Origamid", year: "2021", status: "Concluído" },
+        ],
+      },
+      contact: {
+        eyebrow: "Vamos conversar",
+        title: "Tem um produto complexo ou um sistema que precisa evoluir?",
+        description:
+          "Gosto de desafios em que engenharia, experiência e confiabilidade precisam caminhar juntas. Se esse é o seu contexto, quero conhecê-lo.",
+        emailCta: "Iniciar uma conversa",
+        resumeTitle: "Prefere começar pelo currículo?",
+        resumeDescription: "Escolha a versão e abra o PDF em uma nova aba.",
+        resumePT: "Currículo em português",
+        resumeEN: "Resume in English",
+        copyEmail: "Copiar e-mail",
+        copied: "E-mail copiado",
+      },
+      footer: {
+        line: "Projetado e desenvolvido com intenção em São Paulo.",
+        backToTop: "Voltar ao topo",
+      },
+    },
+    en: {
+      meta: {
+        title: "Guilherme Garcia — Software Engineer",
+        description:
+          "Software Engineer focused on web products, system modernization, observability, and operational reliability.",
+      },
+      navigation: {
+        work: "Work",
+        about: "About",
+        experience: "Experience",
+        stack: "Stack",
+        learning: "Education",
+        contact: "Contact",
+        menu: "Open menu",
+        close: "Close menu",
+        language: "Mudar para português",
+      },
+      hero: {
+        eyebrow: "Software Engineer • Full Stack & Reliability",
+        titleLead: "I build products",
+        titleAccent: "that cannot stop.",
+        description:
+          "I turn complex systems into clearer, maintainable, and reliable experiences — from the front-end component to production observability.",
+        primaryCta: "Explore my work",
+        secondaryCta: "Download résumé",
+        status: "Open to meaningful conversations",
+        locationLabel: "Based in São Paulo",
+        sceneLabel: "System evolving",
+        sceneStatus: "all services operational",
+        sceneNodes: ["BUILD", "OBSERVE", "EVOLVE"],
+      },
+      signals: [
+        { value: "3 areas", label: "Product, infrastructure & DevOps" },
+        { value: "24×7", label: "Critical operations experience" },
+        { value: "≈200", label: "Customers on supported environments" },
+        { value: "15+", label: "Freelance websites delivered" },
+      ],
+      about: {
+        eyebrow: "How I work",
+        title: "Code is only one part of the delivery.",
+        intro:
+          "I hold a Bachelor's degree in Computer Science and work across Full Stack Development, Infrastructure, and DevOps. That end-to-end perspective helps me build interfaces with business rules in mind — and systems with the people who rely on them in mind.",
+        paragraphs: [
+          "Today, at TOTVS juriTIs, I help evolve LegalDesk, a complete web ERP for law firm management. I work on the product's new generation, creating reusable Vue.js components and structures connected to a robust C#/.NET foundation.",
+          "Before that, I worked in Hapvida/TIVIT's mission-critical environments, where observability was not a decorative dashboard: it was how we anticipated failures, investigated patterns, and protected essential operational flows.",
+        ],
+        principle: "Understand the whole system to improve the right part.",
+      },
+      work: {
+        eyebrow: "Selected work",
+        title: "Real problems. Complex contexts. Lasting impact.",
+        description:
+          "A selection of professional products and challenges that best represent the engineering work I deliver today.",
+        confidential: "Professional case • limited public details",
+        items: [
+          {
+            number: "01",
+            company: "TOTVS juriTIs",
+            title: "LegalDesk — the next generation of a legal ERP",
+            category: "Product modernization",
+            period: "2026 — present",
+            summary: "Building components and generic structures from the ground up to shape the new LegalDesk experience, a complete ERP for legal practice management.",
+            challenge: "Evolve an established application without losing the business rules, behaviors, and trust earned by the legacy product.",
+            contribution: [
+              "Reusable Vue.js components that reduce duplication and standardize new screens.",
+              "Gradual migration of Durandal flows while preserving business-validated behavior.",
+              "Full Stack work across C#/.NET, APIs, grids, and business rules with UX and Product.",
+            ],
+            tags: ["Vue.js", "C# / .NET", "Durandal", "Design System", "ERP"],
+            tone: "cyan",
+          },
+          {
+            number: "02",
+            company: "Hapvida • TIVIT",
+            title: "Observability applied to critical operations",
+            category: "Reliability case",
+            period: "2026",
+            summary: "Proactive investigation of recurring failures in the medical exam export process, a sensitive flow tied to operational continuity.",
+            challenge: "Turn scattered signals into a clear technical hypothesis before recurrence developed into even greater operational impact.",
+            contribution: [
+              "Correlated metrics and events in Zabbix to isolate failure patterns.",
+              "Identified database table locks as a cause associated with the process.",
+              "Provided technical direction for mitigation while supporting a 24×7 operation with Grafana and Datadog.",
+            ],
+            tags: ["Zabbix", "Grafana", "Datadog", "SQL", "Incident Response"],
+            tone: "lime",
+          },
+          {
+            number: "03",
+            company: "Eduxe",
+            title: "From reactive operations to predictable environments",
+            category: "Infrastructure & DevOps",
+            period: "2022 — 2025",
+            summary: "Restructuring, automation, and observability for critical environments used by approximately 200 customers.",
+            challenge: "Stabilize lightly documented products and help the team detect, resolve, and prevent problems faster.",
+            contribution: [
+              "Approximately 40% fewer critical production incidents.",
+              "Detection time reduced from hours to minutes with CloudWatch and Grafana.",
+              "Automation that cut internal routine execution time by 40–50%.",
+            ],
+            tags: ["AWS", "Docker", "Linux", "Python", "Grafana"],
+            tone: "violet",
+          },
+          {
+            number: "04",
+            company: "Open source",
+            title: "Vaga Justa — technology is also a stance",
+            category: "Community",
+            period: "Open contribution",
+            summary: "A collective initiative to make hiring processes more transparent, respectful, and balanced for companies and professionals.",
+            challenge: "Turn a shared market frustration into public principles anyone can consult and improve.",
+            contribution: [
+              "Collaboration with a multidisciplinary community.",
+              "Open development of a manifesto for companies and developers.",
+              "Versioned documentation and public participation through GitHub.",
+            ],
+            tags: ["Open Source", "GitHub", "Markdown", "Community"],
+            tone: "orange",
+            link: "https://github.com/vaga-justa",
+            linkLabel: "Explore the initiative",
+          },
+        ],
+      },
+      experience: {
+        eyebrow: "Journey",
+        title: "Every chapter expanded my field of view.",
+        description: "From design to mission-critical operations, I kept adding layers until I could see product and infrastructure as one system.",
+        present: "Now",
+        items: [
+          { company: "TOTVS juriTIs", role: "Mid-Level Software Developer", period: "Apr 2026 — present", description: "Evolving and modernizing LegalDesk with C#/.NET and Vue.js, creating a reusable foundation for the product's new experience." },
+          { company: "Hapvida • TIVIT", role: "Infrastructure Analyst", period: "Feb 2026 — Apr 2026", description: "Monitoring, troubleshooting, and incident response in a 24×7 mission-critical operation." },
+          { company: "Eduxe", role: "DevOps, Infrastructure & Development", period: "Sep 2022 — Dec 2025", description: "Progressed from Operations to Development and DevOps, focusing on automation, observability, and product reliability." },
+          { company: "Independent projects", role: "Web Designer & Developer", period: "Feb 2020 — Sep 2022", description: "Delivered over 15 websites from concept to deployment, maintaining client satisfaction above 95%." },
+        ],
+      },
+      skills: {
+        eyebrow: "Capabilities",
+        title: "A stack driven by the problem, not the trend.",
+        description: "Tools I use to build, operate, and evolve systems with end-to-end responsibility.",
+        groups: [
+          { number: "01", title: "Build", description: "Web products and reusable interfaces connected to real business rules.", items: ["C# / .NET", "Vue.js", "JavaScript", "React", "Laravel", "REST APIs"] },
+          { number: "02", title: "Operate", description: "Reliable environments, repeatable processes, and lower-risk deployments.", items: ["Linux", "Docker", "Kubernetes", "AWS", "Azure", "Nginx"] },
+          { number: "03", title: "Observe", description: "Signals that help teams act sooner, diagnose better, and learn from failure.", items: ["Grafana", "Zabbix", "Datadog", "CloudWatch", "Logs", "Incident Response"] },
+          { number: "04", title: "Automate", description: "Routines and data turned into clear, fast, and auditable workflows.", items: ["Python", "Shell Script", "SQL", "PostgreSQL", "MySQL", "Webhooks"] },
+        ],
+      },
+      learning: {
+        eyebrow: "Education & growth",
+        title: "Continuous learning, applied to the real world.",
+        degree: { title: "Bachelor's Degree in Computer Science", institution: "Universidade Anhanguera", period: "2020 — 2023" },
+        certificatesLabel: "Selected certifications & courses",
+        viewCertificate: "View certificate",
+        items: [
+          { title: "Oracle Cloud Infrastructure Foundations Associate", issuer: "Oracle Academy", year: "2025", status: "Completed", url: "/eCertificate.pdf" },
+          { title: "Kubernetes Essentials", issuer: "LINUXTips", year: "2025", status: "Completed", url: "/certificate-kubernetes-essentials.pdf" },
+          { title: "SQLite", issuer: "Origamid", year: "2025", status: "Completed", url: "https://www.origamid.com/certificate/1a913b0f" },
+          { title: "Complete Vue.js 2", issuer: "Origamid", year: "2025", status: "Completed" },
+          { title: "MongoDB", issuer: "Udemy", year: "2024", status: "Completed" },
+          { title: "JavaScript ES6+", issuer: "Origamid", year: "2021", status: "Completed" },
+        ],
+      },
+      contact: {
+        eyebrow: "Let's talk",
+        title: "Working on a complex product or a system that needs to evolve?",
+        description: "I enjoy challenges where engineering, experience, and reliability need to move together. If that is your context, I would like to hear about it.",
+        emailCta: "Start a conversation",
+        resumeTitle: "Would you rather start with my résumé?",
+        resumeDescription: "Choose a version and open the PDF in a new tab.",
+        resumePT: "Currículo em português",
+        resumeEN: "Résumé in English",
+        copyEmail: "Copy email",
+        copied: "Email copied",
+      },
+      footer: {
+        line: "Designed and developed with intention in São Paulo.",
+        backToTop: "Back to top",
+      },
+    },
   },
-  
-  // Skills Section
-  skills: {
-    title: "Skills & Technologies",
-    categories: [
-      {
-        name: "Frontend",
-        items: ["React", "Bootstrap", "CSS", "HTML", "JavaScript", "Livewire", "Vue.js", "Durandal"]
-      },
-      {
-        name: "Backend",
-        items: ["C#/.NET", "Python", "PHP", "Dart", "Laravel", "REST APIs", "Webhooks", "MVC Architecture", "Pandas", "Selenium", "Microservices"]
-      },
-      {
-        name: "Mobile",
-        items: ["Flutter"]
-      },
-      {
-        name: "Databases",
-        items: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"]
-      },
-      {
-        name: "DevOps",
-        items: ["Kubernetes", "Docker", "AWS CloudWatch", "AWS EC2", "AWS S3", "AWS RDS/Aurora", "Azure", "Oracle Cloud OCI", "Grafana", "Zabbix", "Datadog", "Proxmox", "pfSense", "Nginx", "Bash", "Shell Scripting", "Python Scripting", "Docker CLI", "kubectl", "Cron", "Log Analysis", "Kubernetes Manifests"]
-      },
-      {
-        name: "Softskills",
-        items: ["Proactivity", "Teamwork", "Knowledge Sharing", "Problem Solving", "Resilience", "Adaptability", "Self-Learning / Self-Taught", "Fast and Continuous Learning", "Empathy"]
-      },
-      {
-        name: "Tools & Others",
-        items: ["Git", "Bitbucket", "GitHub", "GitLab", "Linux", "Windows", "Agile", "Jira", "ServiceNow", "Notion", "Supabase", "Figma", "Netlify"]
-      }
-    ]
-  },
-  
-  // Projects Section
-  projects: {
-    title: "Featured Projects",
-    items: [
-      {
-        title: "Flash Financas",
-        description: "A mobile app for complete financial management: expenses, transactions, and overall financial health. No spreadsheets needed, and it works even offline — with automatic synchronization once you’re back online. Perfect for quickly logging expenses on the go, making your daily life easier.",
-        image: "/Flash Financas.png",
-        tags: ["Flutter", "Supabase for auth and database hosting", "SQLite for local offline data", "PostgreSQL for database"],
-        figma: "https://www.figma.com/design/iUP6Pwpz6nn14ffZ1eCx4g/Flash-Screens-Prototype?node-id=0-1&t=9wJ8vyaJHxZjaObs-1",
-        liveUrl: "#",
-        githubUrl: "https://github.com/FlashFinancas"
-      },
-      {
-        title: "Moovflix",
-        description: "A free and open-source web platform — with future mobile support — for streaming public domain movies, series, and animations. Each account supports up to 10 profiles, making it easy to share and personalize content management. A unified solution for enjoying classic productions with simple and accessible organization.",
-        image: "/Moovflix.png",
-        tags: ["Laravel or Node.js for backend (Still studying the pros and cons)", "React for Frontend", "PostgreSQL for database", "Redis for caching", "FFmpeg for streaming", 
-          "OAuth for authentication"],
-        figma: "https://www.figma.com/design/LpecDGz9cIe0KfabE7BdXx/Moovflix?node-id=0-1&t=dXjBoiJJcuHa27M6-1",
-        liveUrl: "https://moovflix.com",
-        githubUrl: "https://github.com/guilhermemdpg/moovflix"
-      },
-      {
-        title: "Loqplace",
-        description: "Loqplace is a web platform born from a real need I observed both at work and in my personal life. Its purpose is to provide a unified space where individuals and businesses can find venues for all kinds of events — from birthday parties to weddings. The platform gives users easy access to reviews, photos, contact details, payment, and booking information. Venue owners benefit from a centralized environment to manage all their locations, featuring dashboards, editing tools, integrated chat, and much more.",
-        image: "/LoqPlace.png",
-        tags: ["Laravel", "PostgreSQL", "Python", "Livewire", "OAuth"],
-        figma: "https://www.figma.com/design/IJ3Wk0d83qABibTT9WxDry/Loqplace?node-id=0-1&t=sbQSzUm20FQXjAK0-1",
-        liveUrl: "https://loqplace.com",
-        githubUrl: "https://github.com/guilhermemdpg"
-      },
-      {
-        title: "Eduxeclass",
-        description: "A project I was involved in at my previous job, where I was one of the main people responsible for product maintenance and new feature development, working alongside a colleague. Although I was not part of the original creation, I took on the challenge of reviving and sustaining the product. With resilience and a proactive approach, I managed to overcome the lack of documentation and quickly adapted to a completely new tech stack at the time, ensuring the product’s growth and continuity.",
-        image: "/placeholder.svg",
-        tags: ["Laravel", "MySQL", "PHP", "Vue.js"],
-        figma: "#",
-        liveUrl: "#",
-        githubUrl: "#"
-      },
-      {
-        title: "Vaga Justa",
-        description: "Vaga Justa Project is an initiative I discovered on LinkedIn through one of its founders, Diogo Cezar. Interested in the project’s purpose and mission, I reached out to learn more and became one of its contributors. The project aims to create a “Vaga Justa” manifesto for both companies and developers. Although still in its early stages, we have committed people working to drive the initiative forward.",
-        image: "/vaga_justa.png",
-        tags: ["Markdown", "Manifesto", "Open Source"],
-        figma: "#",
-        liveUrl: "#",
-        githubUrl: "https://github.com/vaga-justa"
-      }
-    ]
-  },
+} as const;
 
-  // Courses Section
-  courses: {
-    title: "Courses and Certifications",
-    items: [
-      {
-        title: "Oracle Certified Associate",
-        description: "An Oracle Certified Associate has a technical background and a strong understanding of Oracle technologies. An Associate certification is intended for candidates who can use their knowledge and experience to apply Oracle’s recommended best practices in the respective domain. Prepares you for these roles: - Administrator - Implementer - Developer - Architect - Data scientist/business analyst. Recognizes these skills: - Foundational and intermediate knowledge and skills",
-        image: "/oracle.png",
-        tags: ["OCI", "Oracle Cloud Infrastructure", "Status: Completed"],
-        cert: "/eCertificate.pdf"
-      },
-      {
-        title: "SQLite Database",
-        description: "Course completed on the Origamid platform, focused on SQLite, where I learned data types, pragma, CRUD operations, SQLite environment setup, limitations, use cases, functions, views, triggers, and a CRM project as the course’s final assignment. In this project, I was able to get hands-on experience and build an SQLite database that will later be used in the upcoming Node.js course on the same platform.",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original-wordmark.svg",
-        tags: ["CRUD ops", "Pragma", "Strict", "SQLite CLI", "JSON", "Views, Triggers", "Data Types", "Status: Completed"],
-        cert: "https://www.origamid.com/certificate/1a913b0f"
-      },
-      { 
-        title: "Kubernetes Essentials",
-        description: "In this course, I learned more about the Kubernetes engine, how it runs on top of Docker through Minikube for local learning, and I also learned concepts such as the control plane, pods, YAML manifests, resource limitations, crash loopback and how to fix it, deploying web images and operating system images like Ubuntu, and web servers such as Nginx. In addition, I also learned more about the history of how the Kubernetes project emerged and the companies behind its maintenance and development.",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
-        tags: ["Kubernetes", "Pods", "Yaml", "Shell", "Control Plane", "Status: Completed"],
-        cert: "/certificate-kubernetes-essentials.pdf"
-      },
-      {
-        title: "Complete Javascript ES6",
-        description: "In this course, you will learn everything necessary to master JavaScript. The course goes from basic to advanced, and by the end of it you will have a full understanding of the language, its main methods, and its syntax. The focus is on learning the language, but its primary area of application will be on the web, through DOM manipulation and requests using the Fetch API. This is not a course for those looking for something quick, but for those who want to truly master the language. The code taught uses all the latest features of modern JavaScript versions, such as arrow functions, promises, and more.",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-        tags: ["JavaScript ES6", "Promises", "Data Types", "Arrow Functions", "DOM Manipulation", "Status: Completed"],
-        cert: "#"
-      },
-      {
-        title: "Complete React",
-        description: "In this course, you will learn how to use React from scratch for building reactive web applications. You will learn how to create a web application with features similar to social networks like Instagram. The focus of the course is on gaining a complete understanding of React, so almost everything will be built from scratch, without relying on external packages.",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-        tags: ["React", "Components", "Hooks", "Components Lifecycle", "Promisses", "Status: in progress"],
-        cert: "#"
-      },
-       {
-        title: "CSS Flexbox, CSS Grid Layout, UI Advanced Design",
-        description: "A set of CSS courses where I was able to learn, at a more low-level approach, how to manually handle different behaviors of web styling. I also learned, in the Advanced UI Design course, more robust Figma features, building on what I had already learned in the Web Design course from the same platform.",
-        image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-        tags: ["CSS Flex Layout", "Flexbox Properties", "Grid Conventions and Properties", "Intermediary Figma", "Complete web design from scratch", "Status: Completed"],
-        cert: "https://www.origamid.com/certificate/47eb71a7",
-      }
-    ]
-  },
-  
-  // Contact Section
-  contact: {
-    title: "Get In Touch",
-    description: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-    email: "guimarsondpgarcia@gmail.com",
-    resumePT: "/curriculo-guilherme-garcia-desenvolvedor-de-software.pdf",
-    resumeEN: "/guilherme-garcia-software-developer.pdf",
-    social: {
-      github: "https://github.com/guilhermemdpg",
-      linkedin: "https://linkedin.com/in/guilherme-marson-d-paulo-garcia-b18b241b5",
-      gitlab: "https://gitlab.com/gmdpg98"
-    }
-  }
-};
+export type PortfolioContent = (typeof portfolioConfig.locales)[Language];

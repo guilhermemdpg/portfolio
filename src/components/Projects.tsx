@@ -1,70 +1,70 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Figma, Github } from "lucide-react";
-import { portfolioConfig } from "@/config/portfolio";
+import { ArrowUpRight, Check, LockKeyhole } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { Reveal } from "@/components/Reveal";
 
 export const Projects = () => {
+  const { content, language } = useLanguage();
+
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            {portfolioConfig.projects.title}
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioConfig.projects.items.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
-              >
-                <div className="aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-2 pt-2">
-                    <Button asChild size="sm" variant="outline" className="flex-1">
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live
-                      </a>
-                    </Button>
-                    <Button asChild size="sm" variant="outline" className="flex-1">
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button asChild size="sm" variant="outline" className="flex-1">
-                      <a href={project.figma} target="_blank" rel="noopener noreferrer">
-                        <Figma className="mr-2 h-4 w-4" />
-                        Prototype
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
+    <section id="work" className="section work-section">
+      <div className="page-width">
+        <Reveal className="section-heading section-heading-split">
+          <div>
+            <p className="section-eyebrow">{content.work.eyebrow}</p>
+            <h2 className="section-title">{content.work.title}</h2>
           </div>
+          <p>{content.work.description}</p>
+        </Reveal>
+
+        <div className="work-list">
+          {content.work.items.map((project, index) => (
+            <Reveal key={project.title} delay={index * 70}>
+              <article className={`work-card tone-${project.tone}`}>
+                <div className="work-card-accent" aria-hidden="true">
+                  <span>{project.number}</span>
+                  <div className="technical-lines"><i /><i /><i /><i /></div>
+                </div>
+
+                <div className="work-card-main">
+                  <div className="work-meta">
+                    <span>{project.company}</span>
+                    <span>{project.category}</span>
+                    <time>{project.period}</time>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p className="work-summary">{project.summary}</p>
+
+                  <div className="work-detail-grid">
+                    <div>
+                      <span className="detail-label">{language === "pt" ? "Contexto" : "Context"}</span>
+                      <p>{project.challenge}</p>
+                    </div>
+                    <div>
+                      <span className="detail-label">{language === "pt" ? "Contribuições" : "Contributions"}</span>
+                      <ul>
+                        {project.contribution.map((item) => (
+                          <li key={item}><Check size={14} />{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="work-footer">
+                    <div className="tag-list">
+                      {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                    {"link" in project ? (
+                      <a href={project.link} target="_blank" rel="noreferrer">
+                        {project.linkLabel}<ArrowUpRight size={16} />
+                      </a>
+                    ) : (
+                      <span className="confidential"><LockKeyhole size={13} />{content.work.confidential}</span>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

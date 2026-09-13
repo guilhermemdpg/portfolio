@@ -1,70 +1,74 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Mail, Github, Linkedin, Gitlab, FileDown, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Check, Copy, Download, Github, Gitlab, Linkedin, Mail } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
+import { Reveal } from "@/components/Reveal";
 
 export const Contact = () => {
-  const socialLinks = [
-    { icon: Github, url: portfolioConfig.contact.social.github, label: "GitHub" },
-    { icon: Linkedin, url: portfolioConfig.contact.social.linkedin, label: "LinkedIn" },
-    { icon: Gitlab, url: portfolioConfig.contact.social.gitlab, label: "Gitlab" }
+  const { content } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(portfolioConfig.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      window.location.href = `mailto:${portfolioConfig.email}`;
+    }
+  };
+
+  const socials = [
+    { label: "GitHub", href: portfolioConfig.social.github, icon: Github },
+    { label: "LinkedIn", href: portfolioConfig.social.linkedin, icon: Linkedin },
+    { label: "GitLab", href: portfolioConfig.social.gitlab, icon: Gitlab },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            {portfolioConfig.contact.title}
-          </h2>
-          <p className="text-muted-foreground mb-12">
-            {portfolioConfig.contact.description}
-          </p>
-          
-          <Card className="p-8 space-y-6" style={{ background: "var(--gradient-card)" }}>
-            <Button asChild size="lg" className="w-full sm:w-auto">
-              <a href={`mailto:${portfolioConfig.contact.email}`}>
-                <Mail className="mr-2" />
-                {portfolioConfig.contact.email}
-              </a>
-            </Button>
+    <section id="contact" className="section contact-section">
+      <div className="page-width">
+        <Reveal>
+          <div className="contact-panel">
+            <div className="contact-main">
+              <p className="section-eyebrow">{content.contact.eyebrow}</p>
+              <h2>{content.contact.title}</h2>
+              <p>{content.contact.description}</p>
 
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto mt-2 sm:mt-0 sm:ml-2">
-              <a href={portfolioConfig.contact.resumePT} target="_blank" rel="noopener noreferrer">
-                <FileDown className="mr-2" />
-                My resume (PT-BR)
-              </a>  
-            </Button>
+              <div className="contact-actions">
+                <a className="button button-light" href={`mailto:${portfolioConfig.email}`}>
+                  <Mail size={18} />{content.contact.emailCta}<ArrowUpRight size={18} />
+                </a>
+                <button type="button" className="copy-email" onClick={copyEmail}>
+                  {copied ? <Check size={16} /> : <Copy size={16} />}
+                  {copied ? content.contact.copied : content.contact.copyEmail}
+                </button>
+              </div>
 
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-              <a href={portfolioConfig.contact.resumeEN} target="_blank" rel="noopener noreferrer">
-                <FileDown className="mr-2" />
-                My resume (EN)
-              </a>  
-            </Button>
-            
-            <div className="flex justify-center gap-4 pt-4">
-              {socialLinks.map((social, index) => (
-                <Button
-                  key={index}
-                  asChild
-                  variant="outline"
-                  size="icon"
-                  className="hover:scale-110 transition-transform"
-                >
-                  <a
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-5 w-5" />
+              <a className="email-display" href={`mailto:${portfolioConfig.email}`}>{portfolioConfig.email}</a>
+              <div className="social-row">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <a href={href} target="_blank" rel="noreferrer" key={label} aria-label={label}>
+                    <Icon size={17} />{label}<ArrowUpRight size={13} />
                   </a>
-                </Button>
-              ))}
+                ))}
+              </div>
             </div>
-          </Card>
-        </div>
+
+            <aside className="resume-card">
+              <span className="resume-icon"><Download /></span>
+              <h3>{content.contact.resumeTitle}</h3>
+              <p>{content.contact.resumeDescription}</p>
+              <div className="resume-links">
+                <a href={portfolioConfig.resumePT} target="_blank" rel="noreferrer">
+                  <span>PT</span>{content.contact.resumePT}<ArrowUpRight size={16} />
+                </a>
+                <a href={portfolioConfig.resumeEN} target="_blank" rel="noreferrer">
+                  <span>EN</span>{content.contact.resumeEN}<ArrowUpRight size={16} />
+                </a>
+              </div>
+            </aside>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,34 +1,47 @@
+import { Quote } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
+import { Reveal } from "@/components/Reveal";
 
 export const About = () => {
+  const { content, language } = useLanguage();
+
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            {portfolioConfig.about.title}
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              {portfolioConfig.about.paragraphs.map((paragraph, index) => (
-                <p key={index} className="text-muted-foreground leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            
-            <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={portfolioConfig.about.image}
-                  alt={portfolioConfig.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl -z-10 blur-2xl" />
-            </div>
+    <section id="about" className="section about-section">
+      <div className="page-width about-grid">
+        <Reveal className="portrait-column">
+          <div className="portrait-frame">
+            <div className="portrait-grid" aria-hidden="true" />
+            <img src={portfolioConfig.portrait} alt={portfolioConfig.name} />
+            <span className="portrait-index">02 / ABOUT</span>
           </div>
+          <div className="portrait-caption">
+            <span>São Paulo, BR</span>
+            <span>{language === "pt" ? "Ciência da Computação" : "Computer Science"}</span>
+          </div>
+        </Reveal>
+
+        <div className="about-copy">
+          <Reveal>
+            <p className="section-eyebrow">{content.about.eyebrow}</p>
+            <h2 className="section-title">{content.about.title}</h2>
+            <p className="about-lead">{content.about.intro}</p>
+          </Reveal>
+
+          <div className="about-paragraphs">
+            {content.about.paragraphs.map((paragraph, index) => (
+              <Reveal key={paragraph} delay={100 + index * 80}>
+                <p>{paragraph}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={220}>
+            <blockquote className="principle">
+              <Quote size={22} />
+              <p>{content.about.principle}</p>
+            </blockquote>
+          </Reveal>
         </div>
       </div>
     </section>

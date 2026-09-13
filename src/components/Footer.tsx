@@ -1,14 +1,16 @@
+import { ArrowUp } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  
+  const { content } = useLanguage();
+
   return (
-    <footer className="border-t py-8">
-      <div className="container mx-auto px-4">
-        <div className="text-center text-muted-foreground">
-          <p>© {currentYear} {portfolioConfig.name}. All rights reserved.</p>
-        </div>
+    <footer className="footer">
+      <div className="page-width footer-inner">
+        <p>© {new Date().getFullYear()} {portfolioConfig.shortName}</p>
+        <p>{content.footer.line}</p>
+        <a href="#top">{content.footer.backToTop}<ArrowUp size={15} /></a>
       </div>
     </footer>
   );
